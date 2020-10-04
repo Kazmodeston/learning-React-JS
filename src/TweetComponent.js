@@ -1,16 +1,16 @@
 import React from "react";
 
-function TweetComponent(props){
+function TweetComponent({name,message,likes}){
 
 
     return(
 
         <div className="tweet">
-            <h2>{props.name}</h2>
+            <h2>{name}</h2>
 
-            <p>{props.message}</p>
+            <p>{message}</p>
 
-            <h3>{props.likes}</h3>
+            <h3>{likes}</h3>
         </div>
     )
 }

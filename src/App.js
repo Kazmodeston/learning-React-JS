@@ -2,6 +2,12 @@ import React,{useState} from 'react';
 import "./App.css"
 import TweetComponent from './TweetComponent'
 
+function displayData(mainValue){
+  return mainValue.map(user=>(
+    <TweetComponent name={user.name} message={user.message} likes={user.likes} />
+  ))
+}
+
 function App(){
 
   const [users,setUsers] = useState([
@@ -14,9 +20,7 @@ function App(){
   
   return (
   <div className="app">
-{users.map(user=>(
-  <TweetComponent name={user.name} message={user.message} likes={user.likes} />
-))}
+    {displayData(users)}
   </div>
 
   );
