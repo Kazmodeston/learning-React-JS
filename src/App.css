@@ -15,3 +15,17 @@
   align-items: center;
   border-radius: 20px;
 }
+
+.green{
+  background-color: green;
+  color: aliceblue;
+  font-size: 30px;
+}
+
+.buttonEvent{
+  padding: 10px 20px;
+  background-color: darkslateblue;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 20px;
+}
