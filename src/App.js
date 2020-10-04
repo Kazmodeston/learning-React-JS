@@ -1,21 +1,22 @@
 import React,{useState} from 'react';
 import "./App.css"
+import TweetComponent from './TweetComponent'
+
 function App(){
 
-  // isRed is the actual variable name, while setRed is the function whenever we want to change the value of isRed
- const [isGreen, setGreen] = useState(false);
- const [count, setCount] = useState(0);
+  const [users,setUsers] = useState([
+    
+    {name:"Damilare", message:"You influenced me on React", likes:3},
+    {name:"Janet", message:"She is a good teacher", likes:5},
+    {name:"Tijani", message:"He is smart and eager to learn", likes:7}
 
- const increment = () =>{
-  setCount(count+1);
-  setGreen(!isGreen)
- }
-
+  ]);
+  
   return (
   <div className="app">
-    <h2 className={isGreen ? 'green':'black'}>Change Color to Green</h2>
-     <button className="buttonEvent" onClick={increment}>Increment</button>
-     <h2>{count}</h2>
+{users.map(user=>(
+  <TweetComponent name={user.name} message={user.message} likes={user.likes} />
+))}
   </div>
 
   );
